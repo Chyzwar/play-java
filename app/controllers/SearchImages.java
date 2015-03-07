@@ -2,11 +2,14 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
+import play.libs.Json;
 
 import views.html.*;
 
 import play.data.Form;
 import play.data.DynamicForm;
+
+import java.util.ArrayList;
 
 import services.VarnishSearch;
 
@@ -14,12 +17,15 @@ public class SearchImages extends Controller {
 
     public static Result search() {
 
-    	Form<VarnishSearch> searchForm = Form.form(VarnishSearch.class);
-    	VarnishSearch search = searchForm.bindFromRequest().get();
+    	DynamicForm form = Form.form().bindFromRequest();
 
-    	Logger.debug(search.toString());
+    	String stock_ref = form.get("stock_ref").trim();
+    	String registration = form.get("registration").trim();
 
-       	return ok();
+    	VarnishSearch search = new VarnishSearch(stock_ref, registration);
+    	ArrayList<String> results = search.createUrlList();
+
+       	return ok(Json.toJson(results));
     }
 
 }

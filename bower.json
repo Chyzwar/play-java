@@ -24,6 +24,7 @@
     "angular-resource": "*",
     "respond": "*",
     "html5shiv": "*",
-    "angular-route": "~1.3.14"
+    "angular-route": "~1.3.14",
+    "lodash": "~3.4.0"
   }
 }

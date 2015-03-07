@@ -1,14 +1,39 @@
 <div class="image-cache-form">
-    <form name="search-form" class="form-horizontal" novalidate>
+    <form name="search-form" novalidate>
         <div class="row">
+
             <div class="form-group col-md-6 col-xs-12">
                 <label for="stock-ref">Stock Reference</label>
                 <input type="text" class="form-control" id="stock_ref" ng-model="search.stock_ref" placeholder="ARNAF-U-25606">
             </div>
+
             <div class="form-group col-md-6 col-xs-12">
                 <label for="registration">Registration</label>
                 <input type="text" class="form-control" id="registration" ng-model="search.registration" placeholder="WX14YSC">
             </div>
+            <div class="checkbox col-md-3 col-xs-6">
+                <label>
+                    <input type="checkbox" ng-model="sizeSelect.small"> 350px Size
+                </label>
+            </div>
+
+            <div class="checkbox col-md-3 col-xs-6">
+                <label>
+                    <input type="checkbox" ng-model="sizeSelect.big">  800px Size
+                </label>
+            </div>
+
         </div>
     </form>
+
+</div>
+
+{{errorMessage}}
+
+<div class="pictures">
+    <div class="row">
+        <div class="col-md-4 col-xs-6 car-pic" ng-repeat="picture in searchResults">
+            <img class="img-responsive" ng-src="{{picture}}" alt="">
+        </div>
+    </div>
 </div>

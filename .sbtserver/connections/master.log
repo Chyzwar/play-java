@@ -1,7 +1,7 @@
-New log file opened at Sat Mar 07 14:48:14 GMT 2015 by 27709@localhost.localdomain
-Taking next connection to: 58596
-New client attempting to connect on port: 51910-58596
-  Address = /127.0.0.1:58596
-This client on port 51910 has uuid ccb646df-3f2f-4eb0-b510-7be51e286754 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-ccb646df-3f2f-4eb0-b510-7be51e286754
-Taking next connection to: 58596
+New log file opened at Sat Mar 07 16:16:28 GMT 2015 by 22523@localhost.localdomain
+Taking next connection to: 54036
+New client attempting to connect on port: 54223-54036
+  Address = /127.0.0.1:54036
+This client on port 54223 has uuid 83f5a439-fd26-4c80-b732-dde20779983e configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-83f5a439-fd26-4c80-b732-dde20779983e
+Taking next connection to: 54036
