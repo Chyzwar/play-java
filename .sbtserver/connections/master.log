@@ -1,10 +1,7 @@
-New log file opened at Sat Mar 07 11:14:53 GMT 2015 by 28973@localhost.localdomain
-Taking next connection to: 39929
-New client attempting to connect on port: 58063-39929
-  Address = /127.0.0.1:39929
-This client on port 58063 has uuid d181419b-f5d6-44a5-b31e-93e8f853732a configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-d181419b-f5d6-44a5-b31e-93e8f853732a
-Taking next connection to: 39929
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 39929
+New log file opened at Sat Mar 07 14:48:14 GMT 2015 by 27709@localhost.localdomain
+Taking next connection to: 58596
+New client attempting to connect on port: 51910-58596
+  Address = /127.0.0.1:58596
+This client on port 51910 has uuid ccb646df-3f2f-4eb0-b510-7be51e286754 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-ccb646df-3f2f-4eb0-b510-7be51e286754
+Taking next connection to: 58596

@@ -22,8 +22,38 @@ angular.module('test-app', ['ngRoute'])
  */
 angular.module('test-app')
     .controller('MainCtrl', [
-        '$scope',
-        function ($scope) {
+        '$scope', 'Search',
+        function ($scope, Search) {
+
+            $scope.search = {
+                'registration': '',
+                'stock_ref': ''
+            };
+
+            $scope.searchResults = {};
+
+            $scope.$watchGroup(['registration', 'stock_ref'], function () {
+                Search.get($scope.search).success(function (data) {
+                    $scope.searchResults = data;
+                    console.log(data);
+                });
+            }, true);
+
 
         }
+    ]);
+
+angular.module('test-app')
+    .factory('Search', [
+        '$http',
+        function ($http) {
+            var url = '/api/v1/search';
+
+            return {
+                get: function (search) {
+                    return $http.post(url, search);
+                }
+            };
+        }
+
     ]);
