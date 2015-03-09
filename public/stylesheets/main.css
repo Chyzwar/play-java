@@ -4,3 +4,17 @@
 .checkbox{
 	margin-top: 0;
 }
+.error{
+	color: red;
+	font-weight: bold;
+}
+.header-title{
+	background-color: rgb(45, 55, 55);
+	color: white;
+}
+.image-cache-form{
+	background-color: #FFDE00;
+}
+.pictures{
+	background-color: #FAFAFA;
+}

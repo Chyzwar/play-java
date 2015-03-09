@@ -35,13 +35,16 @@ angular.module('test-app')
                 big: false
             };
 
-            $scope.errorMessage = '';
+            $scope.errorMessage = {
+                search: '',
+                size: ''
+            };
 
             $scope.searchResults = {};
             $scope.searchResultsCopy = {};
 
             /**
- 			* This could be done a bit more elegant way but iI dont know validation rules.
+             * This could be done a bit more elegant way but iI dont know validation rules.
              */
             $scope.$watchGroup(['search.registration', 'search.stock_ref'],
                 function () {
@@ -49,29 +52,33 @@ angular.module('test-app')
                     var stockLen = $scope.search.stock_ref.length;
 
                     if (reLen > 0 && stockLen > 0) {
-                    	 $scope.searchResults = {};
+                        //Clean errpr message before next results
+                        $scope.searchResults = {};
+                        $scope.errorMessage.search = '';
+
                         Search.get($scope.search).success(function (data) {
                             if (data.length > 1) {
                                 $scope.searchResults = data;
                                 $scope.searchResultsCopy = angular.copy(data);
                                 filterSize();
                             } else {
-                                $scope.errorMessage = data[0];
+                                $scope.errorMessage.search = data[0];
                             }
 
                         });
                     }
                 }, true);
 
-
+            // Watche changes in picture size check boxes
             $scope.$watchGroup(['sizeSelect.small', 'sizeSelect.big'],
                 function () {
+                	$scope.errorMessage.size = '';
                     filterSize();
                 });
 
             /**
              * Filter function depends on big/smalls checkboxes
-             * Use lodash for filter
+             * Use lodash for filter, This filter can be a bit more elegant
              */
             function filterSize() {
                 if ($scope.sizeSelect.small === false && $scope.sizeSelect.big === true) {
@@ -90,13 +97,13 @@ angular.module('test-app')
 
                 if ($scope.sizeSelect.big === false && $scope.sizeSelect.small === false) {
                     $scope.searchResults = {};
+                    $scope.errorMessage.size += 'Select at least one resolution';
                 }
 
                 if ($scope.sizeSelect.big === true && $scope.sizeSelect.small === true) {
                     $scope.searchResults = $scope.searchResultsCopy;
                 }
             }
-
 
         }
     ]);
