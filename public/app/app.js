@@ -115,7 +115,7 @@ angular.module('test-app')
     .factory('Search', [
         '$http',
         function ($http) {
-            var url = '/api/v1/search';
+            var url = '/play-java/api/v1/search';
 
             return {
                 get: function (search) {

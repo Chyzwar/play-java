@@ -3,9 +3,9 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET     /play-java/                controllers.Application.index()
 
-POST 	/api/v1/search              controllers.SearchImages.search()
+POST 	/play-java/api/v1/search              controllers.SearchImages.search()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
